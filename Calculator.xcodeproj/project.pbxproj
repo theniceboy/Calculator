@@ -13,6 +13,7 @@
 		6348D3FD1AE3D26000334F1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6348D3FC1AE3D26000334F1F /* Images.xcassets */; };
 		6348D4001AE3D26000334F1F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6348D3FE1AE3D26000334F1F /* LaunchScreen.xib */; };
 		6348D40C1AE3D26000334F1F /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348D40B1AE3D26000334F1F /* CalculatorTests.swift */; };
+		63E1952B1AE65BB1007FB1DD /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E1952A1AE65BB1007FB1DD /* ZFRippleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		6348D4051AE3D26000334F1F /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6348D40A1AE3D26000334F1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6348D40B1AE3D26000334F1F /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		63E1952A1AE65BB1007FB1DD /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		6348D3F21AE3D26000334F1F /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				63E195291AE65BB1007FB1DD /* Classes */,
 				6348D3F51AE3D26000334F1F /* AppDelegate.swift */,
 				6348D3F71AE3D26000334F1F /* ViewController.swift */,
 				6348D3F91AE3D26000334F1F /* Main.storyboard */,
@@ -110,6 +113,14 @@
 				6348D40A1AE3D26000334F1F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63E195291AE65BB1007FB1DD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				63E1952A1AE65BB1007FB1DD /* ZFRippleButton.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63E1952B1AE65BB1007FB1DD /* ZFRippleButton.swift in Sources */,
 				6348D3F81AE3D26000334F1F /* ViewController.swift in Sources */,
 				6348D3F61AE3D26000334F1F /* AppDelegate.swift in Sources */,
 			);
@@ -409,6 +421,7 @@
 				6348D4111AE3D26000334F1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6348D4121AE3D26000334F1F /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +430,7 @@
 				6348D4141AE3D26000334F1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

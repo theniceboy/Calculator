@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -24,8 +23,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhy-Lv-Q8y">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="CaV-gE-1Qt"/>
                                     <constraint firstAttribute="height" constant="43" id="P2S-do-LX0">
-                                        <variation key="widthClass=compact" constant="60"/>
+                                        <variation key="widthClass=compact" constant="30"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -33,18 +33,99 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="CaV-gE-1Qt"/>
                                         <exclude reference="P2S-do-LX0"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
+                                        <include reference="CaV-gE-1Qt"/>
                                         <include reference="P2S-do-LX0"/>
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfq-Bv-XmX" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.7297772128345047" green="0.79906486742424243" blue="0.34233533855372827" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="tHA-8u-4sF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <state key="normal" title=".">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.8332736315" green="0.91116240530000003" blue="0.39594788829999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.65431843280000002" green="0.71644176140000004" blue="0.30693795080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tHA-8u-4sF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="tHA-8u-4sF"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ypZ-wH-WH4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqS-ys-lst" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.56668901971001473" green="0.59189551767676774" blue="0.16884815365622979" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="FqG-FR-tf0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <state key="normal" title="=">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.65139465942654862" green="0.67925347222222221" blue="0.19262940475839119" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.45041396041149706" green="0.46967724116161613" blue="0.13319570836720937" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FqG-FR-tf0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="FqG-FR-tf0"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="91X-FE-Iub"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ke6-gw-WsX" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="vEG-RJ-9Gy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="1">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,19 +135,35 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vEG-RJ-9Gy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="vEG-RJ-9Gy"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9t5-K5-GUV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob7-ev-Ksj" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="E04-hV-M3e"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="2">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,19 +173,35 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="E04-hV-M3e"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="E04-hV-M3e"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4Ze-Vq-HFb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnh-ab-aVd" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="REo-I2-VJO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="3">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,19 +211,35 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="REo-I2-VJO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="REo-I2-VJO"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IXR-kb-XsC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUt-Yg-E6O" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QAD-ge-PQI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="4">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -120,19 +249,35 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QAD-ge-PQI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QAD-ge-PQI"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9LG-fY-MPh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-zE-iXs" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="P5r-27-2ur"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="5">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,19 +287,35 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="P5r-27-2ur"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="P5r-27-2ur"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="n5v-xt-Cwu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNB-LV-bJw" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mOv-iJ-TPG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="6">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,19 +325,35 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mOv-iJ-TPG"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="mOv-iJ-TPG"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nQX-35-L9L"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSF-hI-3FW" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mUQ-rh-jJy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="7">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -186,19 +363,35 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mUQ-rh-jJy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="mUQ-rh-jJy"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="53W-nV-6jm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHE-SY-gxG" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="iH4-Cm-UKw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="8">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,19 +401,35 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="iH4-Cm-UKw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="iH4-Cm-UKw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Arh-gZ-mkE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kl-iE-whA" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="A93-GE-07R"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="9">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -230,41 +439,35 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPg-A8-Des" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <state key="normal" title="AC">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
-                                        <real key="value" value="6"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="A93-GE-07R"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="A93-GE-07R"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vXd-AZ-6mr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgo-YS-wU3" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.620976783570795" green="0.79906486740000005" blue="0.14082418332841287" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jS2-kF-pdx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="0">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -274,21 +477,39 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.55807382043041143" green="0.72222222222222221" blue="0.12357965091609634" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.65699594184575616" green="0.85024068813131315" blue="0.14548492721620968" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jS2-kF-pdx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="jS2-kF-pdx"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kg4-Ob-Njm"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fge-l1-aDJ" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwT-pD-hRB" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.83327363150393863" green="0.91116240530303028" blue="0.39594788830937577" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.79906486742424243" green="0.71830246974166767" blue="0.36149872994053911" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Cfj-yR-Jg2"/>
+                                    <constraint firstAttribute="height" constant="60" id="ImL-xV-es7"/>
+                                    <constraint firstAttribute="width" constant="60" id="hy1-Yu-YTs"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <state key="normal" title="&lt;">
+                                <state key="normal" title="+">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -296,90 +517,421 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.88689630681818188" green="0.79969937705548966" blue="0.3984367156788135" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
-                                        <color key="value" red="0.77201106679307763" green="0.84530855429292928" blue="0.36214705703309863" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.70127051767676774" green="0.63232374723199725" blue="0.31504463342273614" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Cfj-yR-Jg2"/>
+                                        <exclude reference="ImL-xV-es7"/>
+                                        <exclude reference="hy1-Yu-YTs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Cfj-yR-Jg2"/>
+                                        <include reference="ImL-xV-es7"/>
+                                        <include reference="hy1-Yu-YTs"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6b2-eM-IxR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQH-A5-KE4" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.79906486742424243" green="0.71830246974166767" blue="0.36149872994053911" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="P8f-1C-Tg0"/>
+                                    <constraint firstAttribute="width" constant="60" id="ZQP-PD-Oy3"/>
+                                    <constraint firstAttribute="height" constant="60" id="yM8-jE-Cy8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.86202827429181073" green="0.94387231691919193" blue="0.40437374027667139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.88689630681818188" green="0.79969937705548966" blue="0.3984367156788135" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.70127051767676774" green="0.63232374723199725" blue="0.31504463342273614" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="P8f-1C-Tg0"/>
+                                        <exclude reference="ZQP-PD-Oy3"/>
+                                        <exclude reference="yM8-jE-Cy8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="P8f-1C-Tg0"/>
+                                        <include reference="ZQP-PD-Oy3"/>
+                                        <include reference="yM8-jE-Cy8"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1dC-75-d0U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCk-e9-8cu" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.79906486742424243" green="0.71830246974166767" blue="0.36149872994053911" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0PU-g6-099"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="10d-Xn-znJ"/>
+                                    <constraint firstAttribute="width" constant="60" id="nA6-vq-gv4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.88689630681818188" green="0.79969937705548966" blue="0.3984367156788135" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.70127051767676774" green="0.63232374723199725" blue="0.31504463342273614" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0PU-g6-099"/>
+                                        <exclude reference="10d-Xn-znJ"/>
+                                        <exclude reference="nA6-vq-gv4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0PU-g6-099"/>
+                                        <include reference="10d-Xn-znJ"/>
+                                        <include reference="nA6-vq-gv4"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dHx-XP-nSk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUy-bp-chQ" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.79906486742424243" green="0.71830246974166767" blue="0.36149872994053911" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="9rZ-ll-Ot1"/>
+                                    <constraint firstAttribute="height" constant="60" id="GPX-Su-bdr"/>
+                                    <constraint firstAttribute="width" constant="60" id="LAY-4F-0iA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="÷">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.88689630681818188" green="0.79969937705548966" blue="0.3984367156788135" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.70127051767676774" green="0.63232374723199725" blue="0.31504463342273614" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9rZ-ll-Ot1"/>
+                                        <exclude reference="GPX-Su-bdr"/>
+                                        <exclude reference="LAY-4F-0iA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="9rZ-ll-Ot1"/>
+                                        <include reference="GPX-Su-bdr"/>
+                                        <include reference="LAY-4F-0iA"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ewd-Yo-zd2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ji-6Q-LVM" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.72977721279999996" green="0.79906486740000005" blue="0.34233533859999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ote-fs-tl2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="←">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.65431843280000002" green="0.71644176140000004" blue="0.30693795080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.8332736315" green="0.91116240530000003" blue="0.39594788829999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ote-fs-tl2"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ote-fs-tl2"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="b3x-La-XsL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLF-Bh-LUp" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.72977721279999996" green="0.79906486740000005" blue="0.34233533859999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="559-7V-73s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="AC">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.65431843280000002" green="0.71644176140000004" blue="0.30693795080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.8332736315" green="0.91116240530000003" blue="0.39594788829999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="559-7V-73s"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="559-7V-73s"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UZO-TL-d77"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGd-bi-sTP" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.72977721279999996" green="0.79906486740000005" blue="0.34233533859999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fwC-nQ-sFo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.65431843280000002" green="0.71644176140000004" blue="0.30693795080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.8332736315" green="0.91116240530000003" blue="0.39594788829999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fwC-nQ-sFo"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="fwC-nQ-sFo"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FwS-E4-UMw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUa-Ud-zaK" customClass="ZFRippleButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.79906486742424243" green="0.71830246974166767" blue="0.36149872994053911" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Qf0-BA-ubQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Wka-ro-gfd"/>
+                                    <constraint firstAttribute="height" constant="60" id="qT2-a8-Gnh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="±">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.88689630681818188" green="0.79969937705548966" blue="0.3984367156788135" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" red="0.70127051767676774" green="0.63232374723199725" blue="0.31504463342273614" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Qf0-BA-ubQ"/>
+                                        <exclude reference="Wka-ro-gfd"/>
+                                        <exclude reference="qT2-a8-Gnh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Qf0-BA-ubQ"/>
+                                        <include reference="Wka-ro-gfd"/>
+                                        <include reference="qT2-a8-Gnh"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="btnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0KZ-aD-ifp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="top" secondItem="bSF-hI-3FW" secondAttribute="bottom" constant="20" id="1L1-0P-j5C"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="ke6-gw-WsX" secondAttribute="height" id="1ll-3C-kfD"/>
-                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="leading" secondItem="ke6-gw-WsX" secondAttribute="trailing" constant="20" id="27M-e5-kbg"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="6kl-iE-whA" secondAttribute="width" id="4RX-nS-2ws"/>
-                            <constraint firstItem="tgo-YS-wU3" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="360" id="4SC-Qk-8aS"/>
-                            <constraint firstItem="AhN-fZ-coi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="6t7-Tg-5lB">
-                                <variation key="widthClass=compact" constant="-21"/>
-                            </constraint>
-                            <constraint firstItem="bhy-Lv-Q8y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="7d9-tB-kZ1">
-                                <variation key="widthClass=compact" constant="30"/>
-                            </constraint>
-                            <constraint firstItem="AhN-fZ-coi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="7lM-9n-ay1"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="6kl-iE-whA" secondAttribute="height" id="8ad-ei-GpC"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="cHE-SY-gxG" secondAttribute="width" id="8j8-Jt-vzd"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="Ob7-ev-Ksj" secondAttribute="width" id="CK2-86-yyE"/>
-                            <constraint firstItem="pUt-Yg-E6O" firstAttribute="top" secondItem="ke6-gw-WsX" secondAttribute="bottom" constant="20" id="Djh-2K-oM5"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="8hQ-zE-iXs" secondAttribute="height" id="I5a-oB-Sz5"/>
-                            <constraint firstItem="8hQ-zE-iXs" firstAttribute="top" secondItem="Ob7-ev-Ksj" secondAttribute="bottom" constant="20" id="ILj-KA-Rci"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gNB-LV-bJw" secondAttribute="trailing" constant="20" id="IpR-1J-krm"/>
-                            <constraint firstItem="bSF-hI-3FW" firstAttribute="top" secondItem="pUt-Yg-E6O" secondAttribute="bottom" constant="20" id="JF2-iy-Dph"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="Ob7-ev-Ksj" secondAttribute="height" id="Lvk-fK-jY4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mnh-ab-aVd" secondAttribute="trailing" constant="20" id="MBL-yW-YNM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6kl-iE-whA" secondAttribute="trailing" constant="20" id="Noy-2r-whD"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="mnh-ab-aVd" secondAttribute="width" id="OPw-8M-JMa"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="bSF-hI-3FW" secondAttribute="height" id="On1-Cg-MDn"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="360" id="QF2-OF-GNp"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="Fge-l1-aDJ" secondAttribute="width" id="RPU-BN-Aoy"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="8hQ-zE-iXs" secondAttribute="width" id="UmH-fU-5oQ"/>
-                            <constraint firstItem="tgo-YS-wU3" firstAttribute="top" secondItem="cHE-SY-gxG" secondAttribute="bottom" constant="20" id="Uyr-zl-HBo"/>
-                            <constraint firstItem="6kl-iE-whA" firstAttribute="leading" secondItem="cHE-SY-gxG" secondAttribute="trailing" constant="20" id="Vh6-tf-OXo"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="pUt-Yg-E6O" secondAttribute="width" id="W4G-6D-aGV"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="Fge-l1-aDJ" secondAttribute="height" id="WL4-gl-z2A"/>
-                            <constraint firstItem="Fge-l1-aDJ" firstAttribute="leading" secondItem="tgo-YS-wU3" secondAttribute="trailing" constant="20" id="WPf-ef-t86"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="gNB-LV-bJw" secondAttribute="width" id="WVF-YH-FSP"/>
-                            <constraint firstItem="cHE-SY-gxG" firstAttribute="top" secondItem="8hQ-zE-iXs" secondAttribute="bottom" constant="20" id="YDc-r8-TcS"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="pUt-Yg-E6O" secondAttribute="height" id="Zir-8S-Vqf"/>
-                            <constraint firstItem="gNB-LV-bJw" firstAttribute="top" secondItem="mnh-ab-aVd" secondAttribute="bottom" constant="20" id="aro-Eb-dqj"/>
-                            <constraint firstItem="tgo-YS-wU3" firstAttribute="leading" secondItem="PPg-A8-Des" secondAttribute="trailing" constant="20" id="bTy-aS-BnL"/>
-                            <constraint firstItem="gNB-LV-bJw" firstAttribute="leading" secondItem="8hQ-zE-iXs" secondAttribute="trailing" constant="20" id="bs9-jP-xSI"/>
-                            <constraint firstItem="mnh-ab-aVd" firstAttribute="leading" secondItem="Ob7-ev-Ksj" secondAttribute="trailing" constant="20" id="cR8-eV-gkX"/>
-                            <constraint firstAttribute="trailing" secondItem="AhN-fZ-coi" secondAttribute="trailing" id="cTX-Sm-s5X"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="mnh-ab-aVd" secondAttribute="height" id="dFX-so-QfU"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="gNB-LV-bJw" secondAttribute="height" id="dOu-Qg-bDX"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="ke6-gw-WsX" secondAttribute="width" id="eVA-vi-1HD"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="fNq-2r-7de"/>
-                            <constraint firstItem="Fge-l1-aDJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="360" id="fgX-uB-KGI"/>
-                            <constraint firstItem="mnh-ab-aVd" firstAttribute="top" secondItem="bhy-Lv-Q8y" secondAttribute="bottom" constant="30" id="geR-2D-hGT"/>
-                            <constraint firstItem="ke6-gw-WsX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="gu5-Gz-D6H"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="tgo-YS-wU3" secondAttribute="height" id="iE5-vW-nlu"/>
-                            <constraint firstItem="bhy-Lv-Q8y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="iM1-0G-IHX"/>
-                            <constraint firstAttribute="bottom" secondItem="AhN-fZ-coi" secondAttribute="bottom" id="liw-IK-Pju"/>
-                            <constraint firstItem="8hQ-zE-iXs" firstAttribute="leading" secondItem="pUt-Yg-E6O" secondAttribute="trailing" constant="20" id="mgb-mi-FR9"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="bSF-hI-3FW" secondAttribute="width" id="oEb-cq-r4o"/>
-                            <constraint firstItem="bSF-hI-3FW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="okn-vs-E4n"/>
-                            <constraint firstItem="cHE-SY-gxG" firstAttribute="leading" secondItem="bSF-hI-3FW" secondAttribute="trailing" constant="20" id="q73-f5-t2Q"/>
-                            <constraint firstItem="pUt-Yg-E6O" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="qgQ-i6-u28"/>
-                            <constraint firstItem="ke6-gw-WsX" firstAttribute="top" secondItem="bhy-Lv-Q8y" secondAttribute="bottom" constant="30" id="rax-qN-DkV"/>
-                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="top" secondItem="bhy-Lv-Q8y" secondAttribute="bottom" constant="30" id="tWL-pz-0NN"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="height" secondItem="cHE-SY-gxG" secondAttribute="height" id="wCf-tU-iPq"/>
-                            <constraint firstItem="PPg-A8-Des" firstAttribute="width" secondItem="tgo-YS-wU3" secondAttribute="width" id="xZ7-FJ-q0e"/>
-                            <constraint firstItem="Fge-l1-aDJ" firstAttribute="top" secondItem="6kl-iE-whA" secondAttribute="bottom" constant="20" id="yYk-kT-Sdz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bhy-Lv-Q8y" secondAttribute="trailing" constant="30" id="zJA-0s-ezK">
+                            <constraint firstItem="gqS-ys-lst" firstAttribute="leading" secondItem="gGd-bi-sTP" secondAttribute="trailing" constant="10" id="07F-Yc-bDN"/>
+                            <constraint firstAttribute="trailing" secondItem="AhN-fZ-coi" secondAttribute="trailing" id="0eO-AJ-6OP"/>
+                            <constraint firstItem="ke6-gw-WsX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="1j4-Ew-hZB"/>
+                            <constraint firstItem="vUa-Ud-zaK" firstAttribute="top" secondItem="QUy-bp-chQ" secondAttribute="bottom" constant="10" id="1xA-Om-sNf"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="hfq-Bv-XmX" secondAttribute="width" id="232-W7-DqN"/>
+                            <constraint firstItem="bhy-Lv-Q8y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="2PW-sc-2dJ"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="gNB-LV-bJw" secondAttribute="width" id="2ad-CI-xSy"/>
+                            <constraint firstItem="pUt-Yg-E6O" firstAttribute="top" secondItem="ke6-gw-WsX" secondAttribute="bottom" constant="10" id="2og-M4-za5"/>
+                            <constraint firstItem="vUa-Ud-zaK" firstAttribute="leading" secondItem="gqS-ys-lst" secondAttribute="trailing" constant="10" id="30a-GK-dky"/>
+                            <constraint firstItem="tgo-YS-wU3" firstAttribute="leading" secondItem="2ji-6Q-LVM" secondAttribute="trailing" constant="10" id="343-c0-6dw"/>
+                            <constraint firstItem="ke6-gw-WsX" firstAttribute="top" secondItem="bhy-Lv-Q8y" secondAttribute="bottom" constant="10" id="4Kx-FO-CUb">
                                 <variation key="widthClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstItem="6kl-iE-whA" firstAttribute="top" secondItem="gNB-LV-bJw" secondAttribute="bottom" constant="20" id="zQZ-9m-6AB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Fge-l1-aDJ" secondAttribute="trailing" constant="20" id="zjd-OC-6z5"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="cHE-SY-gxG" secondAttribute="height" id="4Rh-hK-Jhj"/>
+                            <constraint firstItem="8hQ-zE-iXs" firstAttribute="top" secondItem="Ob7-ev-Ksj" secondAttribute="bottom" constant="10" id="5GX-Um-41F"/>
+                            <constraint firstItem="hfq-Bv-XmX" firstAttribute="leading" secondItem="tgo-YS-wU3" secondAttribute="trailing" constant="10" id="6Hh-du-CW8"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="gGd-bi-sTP" secondAttribute="width" id="6Hp-kD-dnj"/>
+                            <constraint firstItem="cHE-SY-gxG" firstAttribute="leading" secondItem="bSF-hI-3FW" secondAttribute="trailing" constant="10" id="6xi-OH-BZX"/>
+                            <constraint firstItem="2ji-6Q-LVM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="7M0-ho-XvO"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="tgo-YS-wU3" secondAttribute="width" id="7hk-AE-PMn"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="ke6-gw-WsX" secondAttribute="width" id="88D-VG-ADm"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="6kl-iE-whA" secondAttribute="width" id="8mq-SB-bCj"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="pUt-Yg-E6O" secondAttribute="height" id="8sq-fF-Wy2"/>
+                            <constraint firstAttribute="bottom" secondItem="AhN-fZ-coi" secondAttribute="bottom" id="A9h-bL-PgY"/>
+                            <constraint firstItem="gNB-LV-bJw" firstAttribute="top" secondItem="mnh-ab-aVd" secondAttribute="bottom" constant="10" id="AzR-5F-RI6"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="gNB-LV-bJw" secondAttribute="height" id="Bpd-4z-Ddb"/>
+                            <constraint firstItem="mnh-ab-aVd" firstAttribute="leading" secondItem="Ob7-ev-Ksj" secondAttribute="trailing" constant="10" id="CaL-It-EEb"/>
+                            <constraint firstItem="6kl-iE-whA" firstAttribute="leading" secondItem="cHE-SY-gxG" secondAttribute="trailing" constant="10" id="Dem-Z0-mbY"/>
+                            <constraint firstItem="mnh-ab-aVd" firstAttribute="top" secondItem="bhy-Lv-Q8y" secondAttribute="bottom" constant="10" id="DlH-0N-i1B">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="cHE-SY-gxG" secondAttribute="width" id="E9n-2d-Wgk"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="ke6-gw-WsX" secondAttribute="height" id="EDS-h2-hXh"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="vLF-Bh-LUp" secondAttribute="width" id="EIB-Th-xQd"/>
+                            <constraint firstItem="vLF-Bh-LUp" firstAttribute="top" secondItem="2ji-6Q-LVM" secondAttribute="bottom" constant="10" id="EYU-kV-ddi"/>
+                            <constraint firstItem="ZCk-e9-8cu" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="EgU-aH-5oi"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="8hQ-zE-iXs" secondAttribute="height" id="FqS-VJ-rht"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="top" secondItem="bhy-Lv-Q8y" secondAttribute="bottom" constant="10" id="JK6-6q-unv">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="gqS-ys-lst" secondAttribute="height" id="K70-YW-cIL"/>
+                            <constraint firstItem="AhN-fZ-coi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ki2-lW-Vg3"/>
+                            <constraint firstItem="hfq-Bv-XmX" firstAttribute="top" secondItem="6kl-iE-whA" secondAttribute="bottom" constant="10" id="Kxl-s0-T5C"/>
+                            <constraint firstItem="pUt-Yg-E6O" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="MZj-7f-WL6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mwT-pD-hRB" secondAttribute="trailing" id="PrT-66-YL8"/>
+                            <constraint firstItem="bSF-hI-3FW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Tnq-v7-tpr"/>
+                            <constraint firstItem="mwT-pD-hRB" firstAttribute="top" secondItem="bhy-Lv-Q8y" secondAttribute="bottom" constant="10" id="UXN-Hp-4HJ">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="mnh-ab-aVd" secondAttribute="width" id="V82-o2-BNu"/>
+                            <constraint firstItem="ZCk-e9-8cu" firstAttribute="leading" secondItem="6kl-iE-whA" secondAttribute="trailing" constant="10" id="VV0-bS-KCR"/>
+                            <constraint firstItem="gNB-LV-bJw" firstAttribute="leading" secondItem="8hQ-zE-iXs" secondAttribute="trailing" constant="10" id="W0S-ZV-noj"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="2ji-6Q-LVM" secondAttribute="height" id="WVD-c2-Uab"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="tgo-YS-wU3" secondAttribute="height" id="Wsz-hS-cQN"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="bSF-hI-3FW" secondAttribute="width" id="Xlw-LY-126"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="gqS-ys-lst" secondAttribute="width" id="adC-Ke-lAg"/>
+                            <constraint firstItem="gGd-bi-sTP" firstAttribute="top" secondItem="tgo-YS-wU3" secondAttribute="bottom" constant="10" id="ao4-vA-9uw"/>
+                            <constraint firstItem="ZCk-e9-8cu" firstAttribute="top" secondItem="QQH-A5-KE4" secondAttribute="bottom" constant="10" id="b10-za-MB6"/>
+                            <constraint firstItem="gqS-ys-lst" firstAttribute="top" secondItem="hfq-Bv-XmX" secondAttribute="bottom" constant="10" id="c2P-WP-lhl"/>
+                            <constraint firstItem="bSF-hI-3FW" firstAttribute="top" secondItem="pUt-Yg-E6O" secondAttribute="bottom" constant="10" id="cDE-n0-KJd"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="leading" secondItem="ke6-gw-WsX" secondAttribute="trailing" constant="10" id="cSM-hP-tgd"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="6kl-iE-whA" secondAttribute="height" id="egp-pg-iaz"/>
+                            <constraint firstItem="tgo-YS-wU3" firstAttribute="top" secondItem="cHE-SY-gxG" secondAttribute="bottom" constant="10" id="f5j-U4-uHx"/>
+                            <constraint firstItem="QUy-bp-chQ" firstAttribute="leading" secondItem="hfq-Bv-XmX" secondAttribute="trailing" constant="10" id="fFJ-Tn-cDI"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="8hQ-zE-iXs" secondAttribute="width" id="gfT-bK-OYf"/>
+                            <constraint firstItem="QQH-A5-KE4" firstAttribute="leading" secondItem="gNB-LV-bJw" secondAttribute="trailing" constant="10" id="h8n-Gw-NZC"/>
+                            <constraint firstItem="QUy-bp-chQ" firstAttribute="top" secondItem="ZCk-e9-8cu" secondAttribute="bottom" constant="10" id="hqa-gw-ezC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bhy-Lv-Q8y" secondAttribute="trailing" constant="20" id="hwu-vB-Wi1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vUa-Ud-zaK" secondAttribute="trailing" id="k7Y-fg-eaR"/>
+                            <constraint firstItem="8hQ-zE-iXs" firstAttribute="leading" secondItem="pUt-Yg-E6O" secondAttribute="trailing" constant="10" id="lS3-Iw-kPg"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="2ji-6Q-LVM" secondAttribute="width" id="n2w-vi-qfu"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="gGd-bi-sTP" secondAttribute="height" id="n8c-oZ-hZ5"/>
+                            <constraint firstItem="QQH-A5-KE4" firstAttribute="top" secondItem="mwT-pD-hRB" secondAttribute="bottom" constant="10" id="naG-YU-2z2"/>
+                            <constraint firstItem="cHE-SY-gxG" firstAttribute="top" secondItem="8hQ-zE-iXs" secondAttribute="bottom" constant="10" id="nnG-cc-VI8"/>
+                            <constraint firstItem="bhy-Lv-Q8y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="ozR-4F-M1M"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="mnh-ab-aVd" secondAttribute="height" id="qCb-bf-eut"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="vLF-Bh-LUp" secondAttribute="height" id="rzD-w3-Os6"/>
+                            <constraint firstItem="AhN-fZ-coi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="s2E-JJ-8FA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QQH-A5-KE4" secondAttribute="trailing" id="sSN-Jt-ARR"/>
+                            <constraint firstItem="vLF-Bh-LUp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="tB2-qn-0mO"/>
+                            <constraint firstItem="mwT-pD-hRB" firstAttribute="leading" secondItem="mnh-ab-aVd" secondAttribute="trailing" constant="10" id="toH-WP-l5R"/>
+                            <constraint firstItem="2ji-6Q-LVM" firstAttribute="top" secondItem="bSF-hI-3FW" secondAttribute="bottom" constant="10" id="uEt-Ie-FZD"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="hfq-Bv-XmX" secondAttribute="height" id="uhm-WR-B2h"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="width" secondItem="pUt-Yg-E6O" secondAttribute="width" id="vGB-Om-MEo"/>
+                            <constraint firstItem="gGd-bi-sTP" firstAttribute="leading" secondItem="vLF-Bh-LUp" secondAttribute="trailing" constant="10" id="wCO-TZ-5D7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QUy-bp-chQ" secondAttribute="trailing" id="yZk-dt-EWI"/>
+                            <constraint firstItem="6kl-iE-whA" firstAttribute="top" secondItem="gNB-LV-bJw" secondAttribute="bottom" constant="10" id="ypc-40-R4Y"/>
+                            <constraint firstItem="Ob7-ev-Ksj" firstAttribute="height" secondItem="bSF-hI-3FW" secondAttribute="height" id="zcB-uM-VmC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="AhN-fZ-coi"/>
                                 <exclude reference="bhy-Lv-Q8y"/>
+                                <exclude reference="hfq-Bv-XmX"/>
+                                <exclude reference="gqS-ys-lst"/>
                                 <exclude reference="ke6-gw-WsX"/>
                                 <exclude reference="Ob7-ev-Ksj"/>
                                 <exclude reference="mnh-ab-aVd"/>
@@ -389,77 +941,105 @@
                                 <exclude reference="bSF-hI-3FW"/>
                                 <exclude reference="cHE-SY-gxG"/>
                                 <exclude reference="6kl-iE-whA"/>
-                                <exclude reference="PPg-A8-Des"/>
                                 <exclude reference="tgo-YS-wU3"/>
-                                <exclude reference="Fge-l1-aDJ"/>
+                                <exclude reference="mwT-pD-hRB"/>
+                                <exclude reference="QQH-A5-KE4"/>
+                                <exclude reference="ZCk-e9-8cu"/>
+                                <exclude reference="QUy-bp-chQ"/>
+                                <exclude reference="2ji-6Q-LVM"/>
+                                <exclude reference="vLF-Bh-LUp"/>
+                                <exclude reference="gGd-bi-sTP"/>
+                                <exclude reference="vUa-Ud-zaK"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7d9-tB-kZ1"/>
-                                <exclude reference="iM1-0G-IHX"/>
-                                <exclude reference="zJA-0s-ezK"/>
-                                <exclude reference="Noy-2r-whD"/>
-                                <exclude reference="Vh6-tf-OXo"/>
-                                <exclude reference="zQZ-9m-6AB"/>
-                                <exclude reference="ILj-KA-Rci"/>
-                                <exclude reference="mgb-mi-FR9"/>
-                                <exclude reference="WPf-ef-t86"/>
-                                <exclude reference="fgX-uB-KGI"/>
-                                <exclude reference="yYk-kT-Sdz"/>
-                                <exclude reference="zjd-OC-6z5"/>
-                                <exclude reference="27M-e5-kbg"/>
-                                <exclude reference="tWL-pz-0NN"/>
-                                <exclude reference="1L1-0P-j5C"/>
-                                <exclude reference="1ll-3C-kfD"/>
-                                <exclude reference="4RX-nS-2ws"/>
-                                <exclude reference="8ad-ei-GpC"/>
-                                <exclude reference="8j8-Jt-vzd"/>
-                                <exclude reference="CK2-86-yyE"/>
-                                <exclude reference="I5a-oB-Sz5"/>
-                                <exclude reference="Lvk-fK-jY4"/>
-                                <exclude reference="OPw-8M-JMa"/>
-                                <exclude reference="On1-Cg-MDn"/>
-                                <exclude reference="QF2-OF-GNp"/>
-                                <exclude reference="RPU-BN-Aoy"/>
-                                <exclude reference="UmH-fU-5oQ"/>
-                                <exclude reference="W4G-6D-aGV"/>
-                                <exclude reference="WL4-gl-z2A"/>
-                                <exclude reference="WVF-YH-FSP"/>
-                                <exclude reference="Zir-8S-Vqf"/>
-                                <exclude reference="dFX-so-QfU"/>
-                                <exclude reference="dOu-Qg-bDX"/>
-                                <exclude reference="eVA-vi-1HD"/>
-                                <exclude reference="fNq-2r-7de"/>
-                                <exclude reference="iE5-vW-nlu"/>
-                                <exclude reference="oEb-cq-r4o"/>
-                                <exclude reference="wCf-tU-iPq"/>
-                                <exclude reference="xZ7-FJ-q0e"/>
-                                <exclude reference="JF2-iy-Dph"/>
-                                <exclude reference="okn-vs-E4n"/>
-                                <exclude reference="YDc-r8-TcS"/>
-                                <exclude reference="q73-f5-t2Q"/>
-                                <exclude reference="IpR-1J-krm"/>
-                                <exclude reference="aro-Eb-dqj"/>
-                                <exclude reference="bs9-jP-xSI"/>
-                                <exclude reference="gu5-Gz-D6H"/>
-                                <exclude reference="rax-qN-DkV"/>
-                                <exclude reference="MBL-yW-YNM"/>
-                                <exclude reference="cR8-eV-gkX"/>
-                                <exclude reference="geR-2D-hGT"/>
-                                <exclude reference="Djh-2K-oM5"/>
-                                <exclude reference="qgQ-i6-u28"/>
-                                <exclude reference="4SC-Qk-8aS"/>
-                                <exclude reference="Uyr-zl-HBo"/>
-                                <exclude reference="bTy-aS-BnL"/>
-                                <exclude reference="6t7-Tg-5lB"/>
-                                <exclude reference="7lM-9n-ay1"/>
-                                <exclude reference="cTX-Sm-s5X"/>
-                                <exclude reference="liw-IK-Pju"/>
+                                <exclude reference="0eO-AJ-6OP"/>
+                                <exclude reference="A9h-bL-PgY"/>
+                                <exclude reference="Ki2-lW-Vg3"/>
+                                <exclude reference="s2E-JJ-8FA"/>
+                                <exclude reference="2PW-sc-2dJ"/>
+                                <exclude reference="hwu-vB-Wi1"/>
+                                <exclude reference="ozR-4F-M1M"/>
+                                <exclude reference="1j4-Ew-hZB"/>
+                                <exclude reference="4Kx-FO-CUb"/>
+                                <exclude reference="232-W7-DqN"/>
+                                <exclude reference="2ad-CI-xSy"/>
+                                <exclude reference="4Rh-hK-Jhj"/>
+                                <exclude reference="6Hp-kD-dnj"/>
+                                <exclude reference="7hk-AE-PMn"/>
+                                <exclude reference="88D-VG-ADm"/>
+                                <exclude reference="8mq-SB-bCj"/>
+                                <exclude reference="8sq-fF-Wy2"/>
+                                <exclude reference="Bpd-4z-Ddb"/>
+                                <exclude reference="E9n-2d-Wgk"/>
+                                <exclude reference="EDS-h2-hXh"/>
+                                <exclude reference="EIB-Th-xQd"/>
+                                <exclude reference="FqS-VJ-rht"/>
+                                <exclude reference="JK6-6q-unv"/>
+                                <exclude reference="K70-YW-cIL"/>
+                                <exclude reference="V82-o2-BNu"/>
+                                <exclude reference="WVD-c2-Uab"/>
+                                <exclude reference="Wsz-hS-cQN"/>
+                                <exclude reference="Xlw-LY-126"/>
+                                <exclude reference="adC-Ke-lAg"/>
+                                <exclude reference="cSM-hP-tgd"/>
+                                <exclude reference="egp-pg-iaz"/>
+                                <exclude reference="gfT-bK-OYf"/>
+                                <exclude reference="n2w-vi-qfu"/>
+                                <exclude reference="n8c-oZ-hZ5"/>
+                                <exclude reference="qCb-bf-eut"/>
+                                <exclude reference="rzD-w3-Os6"/>
+                                <exclude reference="uhm-WR-B2h"/>
+                                <exclude reference="vGB-Om-MEo"/>
+                                <exclude reference="zcB-uM-VmC"/>
+                                <exclude reference="2og-M4-za5"/>
+                                <exclude reference="MZj-7f-WL6"/>
+                                <exclude reference="5GX-Um-41F"/>
+                                <exclude reference="lS3-Iw-kPg"/>
+                                <exclude reference="Tnq-v7-tpr"/>
+                                <exclude reference="cDE-n0-KJd"/>
+                                <exclude reference="CaL-It-EEb"/>
+                                <exclude reference="DlH-0N-i1B"/>
+                                <exclude reference="6xi-OH-BZX"/>
+                                <exclude reference="nnG-cc-VI8"/>
+                                <exclude reference="AzR-5F-RI6"/>
+                                <exclude reference="W0S-ZV-noj"/>
+                                <exclude reference="7M0-ho-XvO"/>
+                                <exclude reference="uEt-Ie-FZD"/>
+                                <exclude reference="343-c0-6dw"/>
+                                <exclude reference="f5j-U4-uHx"/>
+                                <exclude reference="Dem-Z0-mbY"/>
+                                <exclude reference="ypc-40-R4Y"/>
+                                <exclude reference="PrT-66-YL8"/>
+                                <exclude reference="UXN-Hp-4HJ"/>
+                                <exclude reference="toH-WP-l5R"/>
+                                <exclude reference="EYU-kV-ddi"/>
+                                <exclude reference="tB2-qn-0mO"/>
+                                <exclude reference="h8n-Gw-NZC"/>
+                                <exclude reference="naG-YU-2z2"/>
+                                <exclude reference="sSN-Jt-ARR"/>
+                                <exclude reference="6Hh-du-CW8"/>
+                                <exclude reference="Kxl-s0-T5C"/>
+                                <exclude reference="ao4-vA-9uw"/>
+                                <exclude reference="wCO-TZ-5D7"/>
+                                <exclude reference="EgU-aH-5oi"/>
+                                <exclude reference="VV0-bS-KCR"/>
+                                <exclude reference="b10-za-MB6"/>
+                                <exclude reference="07F-Yc-bDN"/>
+                                <exclude reference="c2P-WP-lhl"/>
+                                <exclude reference="fFJ-Tn-cDI"/>
+                                <exclude reference="hqa-gw-ezC"/>
+                                <exclude reference="yZk-dt-EWI"/>
+                                <exclude reference="1xA-Om-sNf"/>
+                                <exclude reference="30a-GK-dky"/>
+                                <exclude reference="k7Y-fg-eaR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="AhN-fZ-coi"/>
                                 <include reference="bhy-Lv-Q8y"/>
+                                <include reference="hfq-Bv-XmX"/>
+                                <include reference="gqS-ys-lst"/>
                                 <include reference="ke6-gw-WsX"/>
                                 <include reference="Ob7-ev-Ksj"/>
                                 <include reference="mnh-ab-aVd"/>
@@ -469,74 +1049,103 @@
                                 <include reference="bSF-hI-3FW"/>
                                 <include reference="cHE-SY-gxG"/>
                                 <include reference="6kl-iE-whA"/>
-                                <include reference="PPg-A8-Des"/>
                                 <include reference="tgo-YS-wU3"/>
-                                <include reference="Fge-l1-aDJ"/>
+                                <include reference="mwT-pD-hRB"/>
+                                <include reference="QQH-A5-KE4"/>
+                                <include reference="ZCk-e9-8cu"/>
+                                <include reference="QUy-bp-chQ"/>
+                                <include reference="2ji-6Q-LVM"/>
+                                <include reference="vLF-Bh-LUp"/>
+                                <include reference="gGd-bi-sTP"/>
+                                <include reference="vUa-Ud-zaK"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="7d9-tB-kZ1"/>
-                                <include reference="iM1-0G-IHX"/>
-                                <include reference="zJA-0s-ezK"/>
-                                <include reference="Noy-2r-whD"/>
-                                <include reference="Vh6-tf-OXo"/>
-                                <include reference="zQZ-9m-6AB"/>
-                                <include reference="ILj-KA-Rci"/>
-                                <include reference="mgb-mi-FR9"/>
-                                <include reference="WPf-ef-t86"/>
-                                <include reference="fgX-uB-KGI"/>
-                                <include reference="yYk-kT-Sdz"/>
-                                <include reference="zjd-OC-6z5"/>
-                                <include reference="27M-e5-kbg"/>
-                                <include reference="tWL-pz-0NN"/>
-                                <include reference="1L1-0P-j5C"/>
-                                <include reference="1ll-3C-kfD"/>
-                                <include reference="4RX-nS-2ws"/>
-                                <include reference="8ad-ei-GpC"/>
-                                <include reference="8j8-Jt-vzd"/>
-                                <include reference="CK2-86-yyE"/>
-                                <include reference="I5a-oB-Sz5"/>
-                                <include reference="Lvk-fK-jY4"/>
-                                <include reference="OPw-8M-JMa"/>
-                                <include reference="On1-Cg-MDn"/>
-                                <include reference="QF2-OF-GNp"/>
-                                <include reference="RPU-BN-Aoy"/>
-                                <include reference="UmH-fU-5oQ"/>
-                                <include reference="W4G-6D-aGV"/>
-                                <include reference="WL4-gl-z2A"/>
-                                <include reference="WVF-YH-FSP"/>
-                                <include reference="Zir-8S-Vqf"/>
-                                <include reference="dFX-so-QfU"/>
-                                <include reference="dOu-Qg-bDX"/>
-                                <include reference="eVA-vi-1HD"/>
-                                <include reference="fNq-2r-7de"/>
-                                <include reference="iE5-vW-nlu"/>
-                                <include reference="oEb-cq-r4o"/>
-                                <include reference="wCf-tU-iPq"/>
-                                <include reference="xZ7-FJ-q0e"/>
-                                <include reference="JF2-iy-Dph"/>
-                                <include reference="okn-vs-E4n"/>
-                                <include reference="YDc-r8-TcS"/>
-                                <include reference="q73-f5-t2Q"/>
-                                <include reference="IpR-1J-krm"/>
-                                <include reference="aro-Eb-dqj"/>
-                                <include reference="bs9-jP-xSI"/>
-                                <include reference="gu5-Gz-D6H"/>
-                                <include reference="rax-qN-DkV"/>
-                                <include reference="MBL-yW-YNM"/>
-                                <include reference="cR8-eV-gkX"/>
-                                <include reference="geR-2D-hGT"/>
-                                <include reference="Djh-2K-oM5"/>
-                                <include reference="qgQ-i6-u28"/>
-                                <include reference="4SC-Qk-8aS"/>
-                                <include reference="Uyr-zl-HBo"/>
-                                <include reference="bTy-aS-BnL"/>
-                                <include reference="6t7-Tg-5lB"/>
-                                <include reference="7lM-9n-ay1"/>
-                                <include reference="cTX-Sm-s5X"/>
-                                <include reference="liw-IK-Pju"/>
+                                <include reference="0eO-AJ-6OP"/>
+                                <include reference="A9h-bL-PgY"/>
+                                <include reference="Ki2-lW-Vg3"/>
+                                <include reference="s2E-JJ-8FA"/>
+                                <include reference="2PW-sc-2dJ"/>
+                                <include reference="hwu-vB-Wi1"/>
+                                <include reference="ozR-4F-M1M"/>
+                                <include reference="1j4-Ew-hZB"/>
+                                <include reference="4Kx-FO-CUb"/>
+                                <include reference="232-W7-DqN"/>
+                                <include reference="2ad-CI-xSy"/>
+                                <include reference="4Rh-hK-Jhj"/>
+                                <include reference="6Hp-kD-dnj"/>
+                                <include reference="7hk-AE-PMn"/>
+                                <include reference="88D-VG-ADm"/>
+                                <include reference="8mq-SB-bCj"/>
+                                <include reference="8sq-fF-Wy2"/>
+                                <include reference="Bpd-4z-Ddb"/>
+                                <include reference="E9n-2d-Wgk"/>
+                                <include reference="EDS-h2-hXh"/>
+                                <include reference="EIB-Th-xQd"/>
+                                <include reference="FqS-VJ-rht"/>
+                                <include reference="JK6-6q-unv"/>
+                                <include reference="K70-YW-cIL"/>
+                                <include reference="V82-o2-BNu"/>
+                                <include reference="WVD-c2-Uab"/>
+                                <include reference="Wsz-hS-cQN"/>
+                                <include reference="Xlw-LY-126"/>
+                                <include reference="adC-Ke-lAg"/>
+                                <include reference="cSM-hP-tgd"/>
+                                <include reference="egp-pg-iaz"/>
+                                <include reference="gfT-bK-OYf"/>
+                                <include reference="n2w-vi-qfu"/>
+                                <include reference="n8c-oZ-hZ5"/>
+                                <include reference="qCb-bf-eut"/>
+                                <include reference="rzD-w3-Os6"/>
+                                <include reference="uhm-WR-B2h"/>
+                                <include reference="vGB-Om-MEo"/>
+                                <include reference="zcB-uM-VmC"/>
+                                <include reference="2og-M4-za5"/>
+                                <include reference="MZj-7f-WL6"/>
+                                <include reference="5GX-Um-41F"/>
+                                <include reference="lS3-Iw-kPg"/>
+                                <include reference="Tnq-v7-tpr"/>
+                                <include reference="cDE-n0-KJd"/>
+                                <include reference="CaL-It-EEb"/>
+                                <include reference="DlH-0N-i1B"/>
+                                <include reference="6xi-OH-BZX"/>
+                                <include reference="nnG-cc-VI8"/>
+                                <include reference="AzR-5F-RI6"/>
+                                <include reference="W0S-ZV-noj"/>
+                                <include reference="7M0-ho-XvO"/>
+                                <include reference="uEt-Ie-FZD"/>
+                                <include reference="343-c0-6dw"/>
+                                <include reference="f5j-U4-uHx"/>
+                                <include reference="Dem-Z0-mbY"/>
+                                <include reference="ypc-40-R4Y"/>
+                                <include reference="PrT-66-YL8"/>
+                                <include reference="UXN-Hp-4HJ"/>
+                                <include reference="toH-WP-l5R"/>
+                                <include reference="EYU-kV-ddi"/>
+                                <include reference="tB2-qn-0mO"/>
+                                <include reference="h8n-Gw-NZC"/>
+                                <include reference="naG-YU-2z2"/>
+                                <include reference="sSN-Jt-ARR"/>
+                                <include reference="6Hh-du-CW8"/>
+                                <include reference="Kxl-s0-T5C"/>
+                                <include reference="ao4-vA-9uw"/>
+                                <include reference="wCO-TZ-5D7"/>
+                                <include reference="EgU-aH-5oi"/>
+                                <include reference="VV0-bS-KCR"/>
+                                <include reference="b10-za-MB6"/>
+                                <include reference="07F-Yc-bDN"/>
+                                <include reference="c2P-WP-lhl"/>
+                                <include reference="fFJ-Tn-cDI"/>
+                                <include reference="hqa-gw-ezC"/>
+                                <include reference="yZk-dt-EWI"/>
+                                <include reference="1xA-Om-sNf"/>
+                                <include reference="30a-GK-dky"/>
+                                <include reference="k7Y-fg-eaR"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="labelResult" destination="bhy-Lv-Q8y" id="g9X-7N-yGD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
